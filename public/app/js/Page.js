@@ -2,12 +2,15 @@ import Film from "./Film.js";
 import Component from "./Component.js";
 
 class Page extends Component {
-  debugger;
+  peliculas;
   constructor(parentElement, className, tag, film) {
     super(parentElement, className, tag);
     this.generateHTML();
     debugger;
-    const film1 = new Film(".series-list", "serie", "li", film);
+    (() => {
+      this.busquedaPelicula();
+    })();
+    //const film1 = new Film(".series-list", "serie", "li", film);
   }
   generateHTML() {
     const html = ` <header class="main-header">
@@ -39,6 +42,26 @@ class Page extends Component {
 
     this.element.innerHTML = html;
   }
+  busquedaPelicula = async () => {
+    try {
+      debugger;
+      const url = "http://localhost:3001/series";
+      const response = await fetch(url);
+      //console.log(response);
+      if (response.ok) {
+        const dataResponse = await response.json();
+        console.log(dataResponse);
+        debugger;
+        dataResponse.map((dataResponse) => {
+          let film1 = new Film(".series-list", "serie", "li", dataResponse);
+        });
+      } else {
+        throw new error("Error provocado :(");
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
 }
 
 export default Page;

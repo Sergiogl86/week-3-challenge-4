@@ -7,13 +7,11 @@ class Film extends Component {
   year;
   filmHTML;
   constructor(parentElement, className, tag, film) {
-    debugger;
     super(parentElement, className, tag);
-    this.name = film[0].name;
-    this.creator = film[0].creator;
-    this.poster = film[0].poster;
-    this.year = film[0].year;
-    debugger;
+    this.name = film.name;
+    this.creator = film.creator;
+    this.poster = film.poster;
+    this.year = film.year;
 
     //const filmPosition = this.element.querySelector(parentElement);
 
@@ -24,8 +22,6 @@ class Film extends Component {
       this.year,
       this.poster
     );
-    this.filmHTML = filmContent;
-    this.element.append(filmContent);
   }
 
   generateFilmHTML(name, creator, year, poster) {
