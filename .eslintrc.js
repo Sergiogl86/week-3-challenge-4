@@ -8,6 +8,7 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 12,
   },
+
   rules: {
     "no-param-reassign": "off",
     "no-plusplus": "off",
