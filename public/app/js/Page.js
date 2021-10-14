@@ -1,12 +1,13 @@
 class Page {
   element;
+  parentElement;
   constructor(parentElement, className, tag = "div") {
-    const positionPage = document.getElementsByTagName("body");
-    this.element = document.createElement("div");
-    this.element.className = "container";
+    this.parentElement = parentElement;
+    this.element = document.createElement(tag);
+    this.element.className = className;
     this.generateHTML();
 
-    positionPage[0].append(this.element);
+    this.parentElement.append(this.element);
   }
   generateHTML() {
     const html = ` <header class="main-header">
