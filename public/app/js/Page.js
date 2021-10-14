@@ -3,7 +3,7 @@ class Page {
   constructor(parentElement, className, tag = "div") {
     const positionPage = document.getElementsByTagName("body");
     this.element = document.createElement("div");
-    this.className = "container";
+    this.element.className = "container";
     this.generateHTML();
 
     positionPage[0].append(this.element);
@@ -22,10 +22,14 @@ class Page {
              <section class="series-pending"> 
              <h3 class="subsection-title">Pending series</h3>
             <p class="info">You have 4 series pending to watch</p>
+             <ul class="series-list">
+             </ul>
             </section>
             <section class="series-watched">
             <h3 class="subsection-title">Watched series</h3>
             <p class="info">You have watched 4 series</p>
+             <ul class="series-list series-list--watched">
+             </ul>
             </section>
           </section>
         <section class="ranking">
