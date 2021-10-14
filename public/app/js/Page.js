@@ -1,12 +1,13 @@
-class Page {
-  element;
-  constructor(parentElement, className, tag = "div") {
-    const positionPage = document.getElementsByTagName("body");
-    this.element = document.createElement("div");
-    this.element.className = "container";
-    this.generateHTML();
+import Film from "./Film.js";
+import Component from "./Component.js";
 
-    positionPage[0].append(this.element);
+class Page extends Component {
+  debugger;
+  constructor(parentElement, className, tag, film) {
+    super(parentElement, className, tag);
+    this.generateHTML();
+    debugger;
+    const film1 = new Film(".series-list", "serie", "li", film);
   }
   generateHTML() {
     const html = ` <header class="main-header">
