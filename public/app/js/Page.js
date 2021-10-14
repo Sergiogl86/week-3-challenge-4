@@ -1,13 +1,10 @@
-class Page {
-  element;
-  parentElement;
-  constructor(parentElement, className, tag = "div") {
-    this.parentElement = parentElement;
-    this.element = document.createElement(tag);
-    this.element.className = className;
-    this.generateHTML();
+import Component from "./Component.js";
 
-    this.parentElement.append(this.element);
+class Page extends Component {
+  constructor(parentElement) {
+    super(parentElement, "container", "div");
+
+    this.generateHTML();
   }
   generateHTML() {
     const html = ` <header class="main-header">

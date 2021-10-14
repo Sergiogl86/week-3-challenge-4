@@ -1,3 +1,4 @@
 import Page from "./Page.js";
+import Component from "./Component.js";
 
-const mainComponent = new Page("body", "container", "div");
+const mainComponent = new Component("body", "app", "div");
